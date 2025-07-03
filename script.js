@@ -1,16 +1,16 @@
-let score = 100;
+let score = parseInt(localStorage.getItem('score')) || 0;
 const scoreEl = document.getElementById("score");
 const person = document.getElementById("person");
-const container = document.querySelector(".circle-container");
 
-container.addEventListener("click", () => {
-  // Увеличение и обратно
-  container.style.transform = "scale(1.1)";
-  setTimeout(() => {
-    container.style.transform = "scale(1)";
-  }, 150);
+scoreEl.textContent = score;
 
-  // Увеличиваем очки
+person.addEventListener("click", () => {
   score += 1;
   scoreEl.textContent = score;
+  localStorage.setItem('score', score);
+
+  // Анимация даже при быстром тапе
+  person.classList.remove("tap-animate");
+  void person.offsetWidth;
+  person.classList.add("tap-animate");
 });
