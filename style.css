@@ -1,0 +1,35 @@
+body {
+  background-color: #0066cc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.score {
+  font-size: 48px;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 20px;
+}
+
+.circle-container {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.person {
+  width: 100%;
+  height: auto;
+  transition: transform 0.2s ease;
+}
